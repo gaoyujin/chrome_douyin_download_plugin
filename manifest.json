@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "抖音自动下载",
+  "version": "1.0.0",
+  "description": "自动下载商户的账单信息",
+  "icons": {
+    "16": "16-16.png",
+    "32": "16-16.png",
+    "48": "16-16.png",
+    "128": "16-16.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://life.douyin.com/p/*",
+        "https://life.douyin.com/p/home*",
+        "https://life.douyin.com/p/fulfillsettle/export_records/*"
+      ],
+      "js": ["src/main.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "src/service_worker.js"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "downloads",
+    "webNavigation",
+    "contextMenus"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/xhs/rewriteXhr.js"],
+      "matches": ["https://life.douyin.com/*"]
+    }
+  ]
+}

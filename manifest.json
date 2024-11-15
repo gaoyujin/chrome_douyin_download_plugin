@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "抖音自动下载",
+  "name": "抖音账单自动下载",
   "version": "1.0.0",
   "description": "自动下载商户的账单信息",
   "icons": {

@@ -5,8 +5,9 @@
 
   // 匹配字符串
   var menusJson = '/v1/web/home/menus' // 获取用户菜单
-  var queryUrl = 'settle/v1/bill/query_date_statistics' // 财务对账的查询接口
-  var exportUrl = 'settle/v1/download/list' // 财务对账的导出接口
+  // var queryUrl = 'settle/v1/bill/query_date_statistics' // 财务对账的查询接口
+  var queryUrl = 'trade_view/v1/verify/verify_record_list' // 核销明细的查询接口
+  var exportUrl = 'settle/v1/download/list/?download_type=21' // 财务对账的导出接口
 
   console.log('ok')
   // 对open进行patch 获取url和method
@@ -53,7 +54,7 @@
               },
               '*'
             )
-            console.log('财务对账list: ', JSON.parse(arr))
+            console.log('核销明细list: ', JSON.parse(arr))
           } catch (err) {
             console.log(err)
             console.log('Error in responseType try catch')
